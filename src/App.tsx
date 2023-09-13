@@ -42,9 +42,9 @@ function App() {
           </span>
         </h1>
         <div className='images-container flex lg:items-start w-screen lg:justify-between gap-4 lg:flex-row flex-col items-center'>
-          <img src="/public/1.jpeg" alt="mode photo number 1" className='flex-1 lg:w-[33%] w-[90%] h-[800px] object-cover'/>
-          <img src="/public/2.jpeg" alt="mode photo number 2" className='flex-1 lg:w-[33%] w-[90%] h-[800px] object-cover'/>
-          <img src="/public/3.jpeg" alt="mode photo number 3" className='flex-1 lg:w-[33%] w-[90%] h-[800px] object-cover'/>
+          <img src="/1.jpg" alt="mode photo number 1" className='flex-1 lg:w-[33%] w-[90%] h-[800px] object-cover'/>
+          <img src="/2.jpg" alt="mode photo number 2" className='flex-1 lg:w-[33%] w-[90%] h-[800px] object-cover'/>
+          <img src="/3.jpg" alt="mode photo number 3" className='flex-1 lg:w-[33%] w-[90%] h-[800px] object-cover'/>
         </div>
       </section>
     </main>

@@ -6,13 +6,13 @@
     font-family: 'kanit';
     font-style: normal;
     font-weight: bolder;
-    src: url('../../public/fonts/kanit-bold.woff') format('woff');
+    src: url('/fonts/kanit-bold.woff') format('woff');
 }
 @font-face {
     font-family: 'kanit';
     font-style: normal;
     font-weight: bold;
-    src: url('../../public/fonts/kanit-semibold.woff') format('woff');
+    src: url('/fonts/kanit-semibold.woff') format('woff');
 }
 
 body {
