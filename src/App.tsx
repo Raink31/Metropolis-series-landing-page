@@ -1,18 +1,13 @@
 import './App.scss'
-import { useEffect } from 'react'
 import  { motion } from 'framer-motion'
-import { fadeInUp } from './anim'
+import { fadeInDown, fadeInUp, fadeInUp2, fadeInUpImage } from './anim'
 
 function App() {
-
-  useEffect(() => {
-    
-  })
 
   return (
     <main className='pt-4 px-6 overflow-x-hidden'>
       <header className='relative mb-2'>
-        <motion.nav className='flex items-center justify-between' variants={}>
+        <motion.nav className='flex items-center justify-between' variants={fadeInDown} initial={"initial"} animate={"loaded"}>
           <div className='lg:hidden block'>
             <p className='flex flex-col items-center'>
               <strong className='text-5xl'>C.P.</strong>
@@ -42,16 +37,17 @@ function App() {
       </header>
       <section className='flex flex-col items-center'>
         <h1 className='lg:text-[4vw] text-[6vw] flex flex-col items-center scale-y-[0.8] xl:-mb-8 lg:-mb-4'>
-          NEW COLLECTION
-          <br />
-          <span className='2xl:-translate-y-8 xl:-translate-y-6 -translate-y-4 tracking-wider text-black'>
+          <motion.strong variants={fadeInUp} initial={"initial"} animate={"loaded"}>
+            NEW COLLECTION
+          </motion.strong>
+          <motion.span variants={fadeInUp2} initial={"initial"} animate={"loaded"} transition={{ease: [.37,0,.32,.97]}} className='2xl:-translate-y-8 xl:-translate-y-6 -translate-y-4 tracking-wider text-black'>
             METROPOLIS SERIES
-          </span>
+          </motion.span>
         </h1>
-        <div className='images-container flex lg:items-start w-screen lg:justify-between gap-4 lg:flex-row flex-col items-center'>
-          <img src="/1.jpg" alt="mode photo number 1" className='flex-1 lg:w-[33%] w-[90%] h-[800px] object-cover'/>
-          <img src="/2.jpg" alt="mode photo number 2" className='flex-1 lg:w-[33%] w-[90%] h-[800px] object-cover'/>
-          <img src="/3.jpg" alt="mode photo number 3" className='flex-1 lg:w-[33%] w-[90%] h-[800px] object-cover'/>
+        <div className='images-container flex lg:items-start w-screen lg:justify-between gap-4 lg:flex-row flex-col items-center overflow-hidden'>
+          <motion.img variants={fadeInUpImage} initial={"initial"} animate={{y: 0, opacity: 1, transition: {duration: 1.5, ease: [.37,0,.32,.97], delay: 1.4}}} src="/1.jpg" alt="mode photo number 1" className='flex-1 lg:w-[33%] w-[90%] h-[800px] object-cover'/>
+          <motion.img variants={fadeInUpImage} initial={"initial"} animate={{y: 0, opacity: 1, transition: {duration: 1.5, ease: [.37,0,.32,.97], delay: 1.7}}} src="/2.jpg" alt="mode photo number 2" className='flex-1 lg:w-[33%] w-[90%] h-[800px] object-cover'/>
+          <motion.img variants={fadeInUpImage} initial={"initial"} animate={{y: 0, opacity: 1, transition: {duration: 1.5, ease: [.37,0,.32,.97], delay: 2}}} src="/3.jpg" alt="mode photo number 3" className='flex-1 lg:w-[33%] w-[90%] h-[800px] object-cover'/>
         </div>
       </section>
     </main>
