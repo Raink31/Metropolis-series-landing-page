@@ -36,25 +36,50 @@ section h1 span {
     text-shadow:  -2px -2px 0 #fafafa, 2px -2px 0 #fafafa, -2px 2px 0 #fafafa, 2px 2px 0 #fafafa;
 }
 
-.photo1 {
+.image1 {
     background-image: url('/1.jpg');
 }
 
-.photo2 {
+.image2 {
     background-image: url('/2.jpg');
 }
 
-.photo3 {
+.image3 {
     background-image: url('/3.jpg');
 }
 
 .photo1, .photo2, .photo3 {
-    background-size: 110%;
-    background-position: center;
-    transition: background-size .5s;
+    overflow: hidden;
 }
 
-.photo1:hover, .photo2:hover, .photo3:hover {
-    background-size: 120%;
+.image1,
+.image2,
+.image3 {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    transition: transform .5s;
+}
+
+.image1:hover, .image2:hover, .image3:hover {
+    transform: scale(1.1);
     cursor: pointer;
+}
+
+.active {
+    width: 18vw;
+    padding: 0 .5rem;
+}
+
+.searchbar {
+    transition: .4s;
+}
+
+.sectionNav li{
+    transition: transform .4s;
+}
+
+.sectionNav li:hover {
+    transform: scale(1.1);
 }

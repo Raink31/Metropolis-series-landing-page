@@ -1,14 +1,17 @@
 import './App.scss'
 import  { motion } from 'framer-motion'
 import { fadeInDown, fadeInUp, fadeInUp2, fadeInUpImage } from './anim'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { useDetectClickOutside } from 'react-detect-click-outside';
 
 function App() {
   const [searchActive, setSearchActive] = useState(false)
 
   const handleClick = () => {
-    setSearchActive(!searchActive)
+    setSearchActive(true)
   }
+
+  const ref = useDetectClickOutside({ onTriggered: () => {setSearchActive(false)}})
 
   return (
     <main className='pt-4 px-6 overflow-x-hidden'>
@@ -21,7 +24,7 @@ function App() {
             </p>
           </div>
           <svg className='lg:hidden block w-[50px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 4H21V6H3V4ZM9 11H21V13H9V11ZM3 18H21V20H3V18Z" fill="rgba(255,255,255,1)"></path></svg>
-          <ul className='lg:flex items-center gap-6 hidden'>
+          <ul className='lg:flex items-center gap-6 hidden sectionNav'>
             <li><a href="">SHOP</a></li>
             <li><a href="">COLLECTION</a></li>
             <li><a href="">ABOUT</a></li>
@@ -35,9 +38,11 @@ function App() {
           </div>
           <ul className='lg:flex items-center gap-4 hidden'>
             <li>
-              <form className='flex items-center gap-4' action="">
-                <input type="text" className={`bg-[#fafafa] w-[18vw] h-[3vh] rounded-md px-2 text-[#131313] ${searchActive ? "active" : ""}`} placeholder='Search here...'/>
-                <svg className='w-7' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z" fill="rgba(255,255,255,1)"></path></svg>
+              <form className='flex items-center gap-4' action="" ref={ref}>
+                <input type="text" className={`bg-[#fafafa] h-[3vh] rounded-md text-[#131313] searchbar ${searchActive ? "active" : ""} w-0 px-0 placeholder-gray-400`} placeholder='What are you looking for ?'/>
+                <button type='button' onClick={handleClick}>
+                  <svg className='w-7' xmlns="http://www.w3.o rg/2000/svg" viewBox="0 0 24 24"><path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z" fill="rgba(255,255,255,1)"></path></svg>
+                </button>
               </form>
             </li>
             <li><a href=""><svg className='w-7' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H18C18 18.6863 15.3137 16 12 16C8.68629 16 6 18.6863 6 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11Z" fill="rgba(255,255,255,1)"></path></svg></a></li>
@@ -55,10 +60,10 @@ function App() {
             METROPOLIS SERIES
           </motion.span>
         </h1>
-        <div className='images-container flex lg:items-start w-screen lg:justify-between gap-4 lg:flex-row flex-col items-center overflow-hidden'>
-          <motion.div variants={fadeInUpImage} initial={"initial"} animate={{y: 0, opacity: 1, transition: {duration: 1.5, ease: [.37,0,.32,.97], delay: 1.6}}} className='flex-1 lg:w-[33%] w-[90%] h-[800px] photo1'></motion.div>
-          <motion.div variants={fadeInUpImage} initial={"initial"} animate={{y: 0, opacity: 1, transition: {duration: 1.5, ease: [.37,0,.32,.97], delay: 1.9}}} className='flex-1 lg:w-[33%] w-[90%] h-[800px] photo2'></motion.div>
-          <motion.div variants={fadeInUpImage} initial={"initial"} animate={{y: 0, opacity: 1, transition: {duration: 1.5, ease: [.37,0,.32,.97], delay: 2.1}}} className='flex-1 lg:w-[33%] w-[90%] h-[800px] photo3'></motion.div>
+        <div className='images-container flex lg:items-start w-screen lg:justify-between gap-4 lg:flex-row flex-col items-center overflow-hidden h-[3000px] lg:h-max lg:pb-0 pb-6'>
+          <motion.div variants={fadeInUpImage} initial={"initial"} animate={{y: 0, opacity: 1, transition: {duration: 1.5, ease: [.37,0,.32,.97], delay: 1.6}}} className='flex-1 lg:w-[33%] w-[90%] h-[800px] photo1'><div className="image1"></div></motion.div>
+          <motion.div variants={fadeInUpImage} initial={"initial"} animate={{y: 0, opacity: 1, transition: {duration: 1.5, ease: [.37,0,.32,.97], delay: 1.9}}} className='flex-1 lg:w-[33%] w-[90%] h-[800px] photo2'><div className="image2"></div></motion.div>
+          <motion.div variants={fadeInUpImage} initial={"initial"} animate={{y: 0, opacity: 1, transition: {duration: 1.5, ease: [.37,0,.32,.97], delay: 2.1}}} className='flex-1 lg:w-[33%] w-[90%] h-[800px] photo3'><div className="image3"></div></motion.div>
         </div>
       </section>
     </main>
