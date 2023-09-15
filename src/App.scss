@@ -14,14 +14,46 @@
     font-weight: bold;
     src: url('/fonts/kanit-semibold.woff') format('woff');
 }
+@font-face {
+    font-family: 'playfair';
+    font-style: normal;
+    font-weight: bold;
+    src: url('/fonts/PlayfairDisplay-Bold.ttf') format('ttf');
+}
 
 body {
     font-family: "kanit", Arial, Helvetica, sans-serif;
     font-weight: bold;
-    background-color: black;
-    color: white;
+    background-color: rgb(19, 19, 19);
+    color: #fafafa;
+}
+
+.logo {
+    font-family: "playfair"
 }
 
 section h1 span {
-    text-shadow:  -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff;
+    text-shadow:  -2px -2px 0 #fafafa, 2px -2px 0 #fafafa, -2px 2px 0 #fafafa, 2px 2px 0 #fafafa;
+}
+
+.photo1 {
+    background-image: url('/1.jpg');
+}
+
+.photo2 {
+    background-image: url('/2.jpg');
+}
+
+.photo3 {
+    background-image: url('/3.jpg');
+}
+
+.photo1, .photo2, .photo3 {
+    background-size: 105%;
+    background-position: center;
+    transition: background-size .5s;
+}
+
+.photo1:hover, .photo2:hover, .photo3:hover {
+    background-size: 115%;
 }
