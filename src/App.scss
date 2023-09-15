@@ -49,11 +49,12 @@ section h1 span {
 }
 
 .photo1, .photo2, .photo3 {
-    background-size: 105%;
+    background-size: 110%;
     background-position: center;
     transition: background-size .5s;
 }
 
 .photo1:hover, .photo2:hover, .photo3:hover {
-    background-size: 115%;
+    background-size: 120%;
+    cursor: pointer;
 }

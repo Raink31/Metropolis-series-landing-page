@@ -56,9 +56,9 @@ function App() {
           </motion.span>
         </h1>
         <div className='images-container flex lg:items-start w-screen lg:justify-between gap-4 lg:flex-row flex-col items-center overflow-hidden'>
-          <motion.div variants={fadeInUpImage} initial={"initial"} animate={{y: 0, opacity: 1, transition: {duration: 1.5, ease: [.37,0,.32,.97], delay: 1.4}}} className='flex-1 lg:w-[33%] w-[90%] h-[800px] photo1'></motion.div>
-          <motion.div variants={fadeInUpImage} initial={"initial"} animate={{y: 0, opacity: 1, transition: {duration: 1.5, ease: [.37,0,.32,.97], delay: 1.7}}} className='flex-1 lg:w-[33%] w-[90%] h-[800px] photo2'></motion.div>
-          <motion.div variants={fadeInUpImage} initial={"initial"} animate={{y: 0, opacity: 1, transition: {duration: 1.5, ease: [.37,0,.32,.97], delay: 2}}} className='flex-1 lg:w-[33%] w-[90%] h-[800px] photo3'></motion.div>
+          <motion.div variants={fadeInUpImage} initial={"initial"} animate={{y: 0, opacity: 1, transition: {duration: 1.5, ease: [.37,0,.32,.97], delay: 1.6}}} className='flex-1 lg:w-[33%] w-[90%] h-[800px] photo1'></motion.div>
+          <motion.div variants={fadeInUpImage} initial={"initial"} animate={{y: 0, opacity: 1, transition: {duration: 1.5, ease: [.37,0,.32,.97], delay: 1.9}}} className='flex-1 lg:w-[33%] w-[90%] h-[800px] photo2'></motion.div>
+          <motion.div variants={fadeInUpImage} initial={"initial"} animate={{y: 0, opacity: 1, transition: {duration: 1.5, ease: [.37,0,.32,.97], delay: 2.1}}} className='flex-1 lg:w-[33%] w-[90%] h-[800px] photo3'></motion.div>
         </div>
       </section>
     </main>
