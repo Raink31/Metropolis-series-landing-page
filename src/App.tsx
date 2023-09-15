@@ -1,7 +1,7 @@
 import './App.scss'
 import  { motion } from 'framer-motion'
 import { fadeInDown, fadeInUp, fadeInUp2, fadeInUpImage } from './anim'
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import { useDetectClickOutside } from 'react-detect-click-outside';
 
 function App() {
