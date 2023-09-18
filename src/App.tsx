@@ -6,6 +6,7 @@ import { useDetectClickOutside } from 'react-detect-click-outside';
 
 function App() {
   const [searchActive, setSearchActive] = useState(false)
+  const [menuIsActive, setMenuIsActive] = useState(false)
 
   const handleClick = () => {
     setSearchActive(true)
@@ -23,7 +24,9 @@ function App() {
               <span className='-translate-y-2 text-2xl'>COMPANY</span>
             </p>
           </div>
-          <svg className='lg:hidden block w-[50px]' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 4H21V6H3V4ZM9 11H21V13H9V11ZM3 18H21V20H3V18Z" fill="rgba(255,255,255,1)"></path></svg>
+          <div className='lg:hidden block w-[50px] burgerButton' onClick={() => setMenuIsActive(!menuIsActive)}> 
+            <div className={`burger ${menuIsActive? "burgerActive" : ""}`}></div>
+          </div>
           <ul className='lg:flex items-center gap-6 hidden sectionNav'>
             <li><a href="">SHOP</a></li>
             <li><a href="">COLLECTION</a></li>
