@@ -14,7 +14,7 @@ export default function Link({data} ) {
         animate='enter'
         exit='exit'
         >
-            <a href={href}>{title}</a>
+            <a href={href} className='linkNav'>{title}</a>
         </motion.div>
     )
 }

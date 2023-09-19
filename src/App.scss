@@ -132,3 +132,14 @@ section h1 span {
         top: 1px;
     }
 }
+
+.blurSection {
+    transition: filter 1s cubic-bezier(0.76,
+        0,
+        0.24,
+        1);
+}
+
+.blur {
+    filter: blur(15px);
+}

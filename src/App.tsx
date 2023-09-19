@@ -14,13 +14,14 @@ function App() {
   }
 
   const ref = useDetectClickOutside({ onTriggered: () => {setSearchActive(false)}})
+  const menuRef = useDetectClickOutside({ onTriggered: () => { setMenuIsActive(false) } })
 
   return (
-    <main className='pt-4 px-6 overflow-x-hidden'>
+    <main className='pt-4 px-6 overflow-x-hidden overflow-y-hidden'>
       <header className='relative mb-2'>
-        <motion.nav className='flex items-center justify-between' variants={fadeInDown} initial={"initial"} animate={"loaded"}>
+        <motion.nav className='flex items-center justify-between relative z-20' variants={fadeInDown} initial={"initial"} animate={"loaded"} ref={menuRef}>
           <div className='lg:hidden block logo'>
-            <p className='flex flex-col items-center'>
+            <p className={`flex flex-col items-center ${menuIsActive ? "blur" : ""} blurSection`}>
               <strong className='text-5xl'>C.P.</strong>
               <span className='-translate-y-2 text-2xl'>COMPANY</span>
             </p>
@@ -58,7 +59,7 @@ function App() {
           </ul>
         </motion.nav>
       </header>
-      <section className='flex flex-col items-center'>
+      <section className={`flex flex-col items-center ${menuIsActive ? "blur" : ""} blurSection`}>
         <h1 className='lg:text-[4vw] text-[6vw] flex flex-col items-center scale-y-[0.8] xl:-mb-8 lg:-mb-4'>
           <motion.strong variants={fadeInUp} initial={"initial"} animate={"loaded"}>
             NEW COLLECTION
