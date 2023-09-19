@@ -1,8 +1,9 @@
 import './App.scss'
-import  { motion } from 'framer-motion'
+import  { motion, AnimatePresence } from 'framer-motion'
 import { fadeInDown, fadeInUp, fadeInUp2, fadeInUpImage } from './anim'
 import { useState } from 'react'
 import { useDetectClickOutside } from 'react-detect-click-outside';
+import Nav from '../src/nav'
 
 function App() {
   const [searchActive, setSearchActive] = useState(false)
@@ -27,6 +28,9 @@ function App() {
           <div className='lg:hidden block w-[50px] burgerButton' onClick={() => setMenuIsActive(!menuIsActive)}> 
             <div className={`burger ${menuIsActive? "burgerActive" : ""}`}></div>
           </div>
+          <AnimatePresence mode='wait'>
+            {menuIsActive && <Nav />}
+          </AnimatePresence>
           <ul className='lg:flex items-center gap-6 hidden sectionNav'>
             <li><a href="">SHOP</a></li>
             <li><a href="">COLLECTION</a></li>
