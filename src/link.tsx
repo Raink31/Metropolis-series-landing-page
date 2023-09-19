@@ -2,7 +2,7 @@ import './App.scss'
 import  { motion } from 'framer-motion'
 import { slide } from '../src/anim';
 
-export default function Link({data} ) {
+export default function Link({data} : {data: any}) {
 
     const {title, href, index} = data
 
