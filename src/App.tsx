@@ -22,8 +22,8 @@ function App() {
         <motion.nav className='flex items-center justify-between relative z-20' variants={fadeInDown} initial={"initial"} animate={"loaded"} ref={menuRef}>
           <div className='lg:hidden block logo'>
             <p className={`flex flex-col items-center ${menuIsActive ? "blur" : ""} blurSection`}>
-              <strong className='text-5xl'>C.P.</strong>
-              <span className='-translate-y-2 text-2xl'>COMPANY</span>
+              <strong className='sm:text-5xl text-3xl'>C.P.</strong>
+              <span className='-translate-y-2 sm:text-2xl text-xl'>COMPANY</span>
             </p>
           </div>
           <div className='lg:hidden block w-[50px] burgerButton' onClick={() => setMenuIsActive(!menuIsActive)}> 
